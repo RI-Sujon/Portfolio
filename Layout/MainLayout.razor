@@ -1,0 +1,50 @@
+﻿@inherits LayoutComponentBase
+@inject IJSRuntime JS
+
+<div class="d-flex flex-column min-vh-100 text-light">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top portfolio-nav">
+        <div class="container">
+            <a class="navbar-brand nav-logo" href="#home" @onclick='() => ScrollTo("home")'>
+                <span class="logo-bracket">&lt;</span>
+                <span class="logo-text">RI</span>
+                <span class="logo-slash">/</span>
+                <span class="logo-bracket">&gt;</span>
+            </a>
+            <button class="navbar-toggler nav-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="toggler-bar"></span>
+                <span class="toggler-bar"></span>
+                <span class="toggler-bar"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+                <ul class="navbar-nav nav-menu">
+                    @foreach (var sec in Sections)
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-styled" href="#@sec.ToLower()" @onclick='() => ScrollTo(sec.ToLower())'>
+                                <span class="nav-number">0@(Array.IndexOf(Sections, sec) + 1).</span>
+                                @sec
+                            </a>
+                        </li>
+                    }
+                    <li class="nav-item ms-lg-3">
+                        <a class="nav-btn-resume" href="#contact" @onclick='() => ScrollTo("contact")'>Hire Me</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<main class="flex-fill">@Body</main>
+
+    <footer class="portfolio-footer">
+        <div class="footer-content">
+            <p class="footer-text">Designed &amp; Built by <span class="text-gradient">Rabiul Islam</span></p>
+            <p class="footer-tech">Blazor WebAssembly • .NET 9 • 2026</p>
+        </div>
+    </footer>
+</div>
+
+@code {
+    string[] Sections = { "Home","About","Skills","Experience","Projects","Achievements","Contact" };
+    async Task ScrollTo(string id) => await JS.InvokeVoidAsync("scrollToSection", id);
+}

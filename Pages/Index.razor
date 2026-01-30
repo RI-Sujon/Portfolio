@@ -1,0 +1,351 @@
+﻿@page "/"
+@inject IJSRuntime JS
+
+<!-- 1️⃣ Home -->
+<section id="home" class="hero d-flex flex-column justify-content-center align-items-center text-center vh-100">
+    <!-- Floating Orbs Background -->
+    <div class="hero-orb orb-1"></div>
+    <div class="hero-orb orb-2"></div>
+    <div class="hero-orb orb-3"></div>
+    
+    <!-- Particles Container -->
+    <div class="particles"></div>
+    
+    <!-- Profile Image with Glow -->
+    <img src="images/profile.jpg" class="rounded-circle profile-img mb-4 animate-scale" width="150" height="150" alt="Rabiul Islam"/>
+    
+    <!-- Name with Gradient -->
+    <h1 class="display-4 fw-bold text-gradient animate-fade-up delay-1">Rabiul Islam Sujon</h1>
+    
+    <!-- Dynamic Typing Effect -->
+    <div class="typing-wrapper animate-fade-up delay-2">
+        <h4 class="subtitle-shimmer">
+            <span class="typing-dynamic">Full-Stack Developer</span><span class="typing-cursor">|</span>
+        </h4>
+        <p class="text-secondary mt-2">
+            <i class="bi bi-geo-alt me-1"></i> Dhaka, Bangladesh
+        </p>
+    </div>
+
+    <!-- Social Links -->
+    <div class="mt-4 social-links animate-fade-up delay-4">
+        <a href="https://github.com/RI-Sujon" target="_blank" title="GitHub"><i class="bi bi-github"></i></a>
+        <a href="https://www.linkedin.com/in/ri-sujon-58b63618a/" target="_blank" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+        <a href="mailto:s.rabiulislam429@gmail.com" title="Email"><i class="bi bi-envelope-fill"></i></a>
+    </div>
+    
+    <!-- Tagline -->
+    <p class="text-light-50 mt-3 px-3 animate-fade-up delay-3" style="max-width: 600px; font-size: 1.1rem; line-height: 1.8; color: #8892b0;">
+        "Crafting elegant solutions through code — transforming complex ideas into seamless, scalable applications."
+    </p>
+    
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator animate-fade-in delay-6" @onclick='() => Scroll("about")'>
+        <span>Scroll</span>
+        <i class="bi bi-chevron-double-down"></i>
+    </div>
+</section>
+
+<!-- 2️⃣ About -->
+<section id="about" class="container section py-5 animate-fade-up">
+    <h2 class="section-title">About Me</h2>
+    <div class="about-content">
+        <div class="about-text">
+            <p class="about-intro">
+                I'm <span class="text-gradient fw-bold">Rabiul Islam</span>, a passionate <strong>Software Engineer</strong> with over <span class="highlight">3.5+ years of experience</span> in full-stack development.
+                I love creating reliable, high-quality software that blends performance, usability, and clean architecture.
+            </p>
+            <p>
+                Throughout my career, I've worked extensively with <span class="tech-tag">ASP.NET Core</span>, <span class="tech-tag">React</span>, <span class="tech-tag">NextJS</span>, <span class="tech-tag">Angular</span>, <span class="tech-tag">Flutter</span>, and <span class="tech-tag">Android</span>, delivering scalable applications across web and mobile platforms.
+                From designing intuitive UIs to building robust APIs, I enjoy solving complex technical challenges and continuously learning new technologies.
+            </p>
+        </div>
+        
+        <div class="about-cards mt-4">
+            <div class="glass-card about-card p-4">
+                <div class="about-icon">🎓</div>
+                <h5 class="text-info">Education</h5>
+                <p class="mb-1"><strong>BSc in Software Engineering</strong></p>
+                <p class="text-secondary mb-1">Institute of Information Technology (<strong>IIT</strong>)</p>
+                <p class="text-secondary mb-1"><strong>University of Dhaka</strong></p>
+                <p class="text-info">CGPA: 3.47 / 4.00 | 2018 – 2021</p>
+            </div>
+            
+            <div class="glass-card about-card p-4">
+                <div class="about-icon">⚡</div>
+                <h5 class="text-info">Beyond Code</h5>
+                <p class="mb-2">I'm a sports enthusiast — proudly represented <strong>IIT‑DU</strong> in <span class="highlight">Football</span> and <span class="highlight">Cricket</span> tournaments.</p>
+                <p class="mb-0">In 2020, I became the <span class="text-gradient fw-bold">Champion of HackTheVerse</span>, a nationwide hackathon by <strong>DU ITVerse</strong>.</p>
+            </div>
+        </div>
+        
+        <p class="about-quote mt-4">
+            <i class="bi bi-quote text-info"></i>
+            I believe technology should make people's lives easier — and I love being part of that transformation.
+        </p>
+    </div>
+</section>
+
+<!-- 3️⃣ Skills -->
+<section id="skills" class="container py-5 section animate-fade-up delay-1">
+    <h2 class="section-title">Skills</h2>
+    <div class="row g-4">
+        @foreach (var cat in Skills)
+        {
+            <div class="col-md-6">
+                <div class="glass-card skill-card p-4 h-100">
+                    <div class="skill-icon mb-3">
+                        @if (cat.Key == "Languages")
+                        {
+                            <i class="bi bi-code-slash"></i>
+                        }
+                        else if (cat.Key == "Frameworks")
+                        {
+                            <i class="bi bi-layers"></i>
+                        }
+                        else if (cat.Key == "Databases")
+                        {
+                            <i class="bi bi-database"></i>
+                        }
+                        else
+                        {
+                            <i class="bi bi-tools"></i>
+                        }
+                    </div>
+                    <h5 class="skill-title text-info mb-3">@cat.Key</h5>
+                    <div class="skill-tags">
+                        @foreach (var skill in cat.Value)
+                        {
+                            <span class="skill-tag">@skill</span>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+
+<!-- 4️⃣ Experience -->
+<section id="experience" class="container section py-5 animate-fade-up delay-2">
+    <h2 class="section-title">Experience</h2>
+    <div class="experience-grid">
+        @for (int idx = 0; idx < Companies.Count; idx++)
+        {
+            var company = Companies[idx];
+            var zigzagClass = idx % 2 == 0 ? "zigzag-left" : "zigzag-right";
+            <div class="experience-company glass-card exp-card-@idx @zigzagClass">
+                <div class="company-header">
+                    <div class="company-info">
+                        <h4 class="company-name">@company.Name</h4>
+                        <p class="company-location"><i class="bi bi-geo-alt me-1"></i>@company.Location</p>
+                        <p class="company-duration"><i class="bi bi-calendar3 me-1"></i>@company.TotalDuration</p>
+                    </div>
+                    <div class="company-logo-img">
+                        <img src="images/@(company.Logo)" alt="@company.Name" />
+                    </div>
+                </div>
+                <div class="roles-timeline">
+                    @foreach (var role in company.Roles)
+                    {
+                        <div class="role-item">
+                            <div class="role-marker"></div>
+                            <div class="role-content">
+                                <h5 class="role-title">@role.Title</h5>
+                                <p class="role-period"><i class="bi bi-clock me-1"></i>@role.Period <span class="role-length">• @role.Length</span></p>
+                                <div class="role-tech">
+                                    @foreach (var tech in role.Technologies)
+                                    {
+                                        <span class="tech-badge">@tech</span>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+</section>
+
+<!-- 5️⃣ Projects -->
+<section id="projects" class="container section py-5 animate-fade-up delay-3">
+    <h2 class="section-title">Projects</h2>
+
+    <!-- Professional Projects -->
+    <div class="projects-subsection mb-5">
+        <h4 class="subsection-title"><i class="bi bi-briefcase me-2"></i>Professional Projects</h4>
+        <p class="subsection-desc text-secondary mb-4">Company projects with limited public details due to confidentiality.</p>
+        <div class="pro-projects-grid">
+            @foreach (var p in ProProjects)
+            {
+                <div class="pro-project-card">
+                    <div>
+                        <i class="bi bi-lock-fill"></i>
+                    </div>
+                    <h6 class="academic-title">@p.Title</h6>
+                    <div class="academic-tech">
+                        @foreach (var tech in p.Tech.Split(", "))
+                        {
+                            <span class="tech-badge-sm">@tech</span>
+                        }
+                    </div>
+                    <p class="pro-project-desc">@p.Desc</p>
+                </div>
+            }
+        </div>
+    </div>
+
+</section>
+
+<!-- Academic Projects New Section -->
+<section id="academic-new" class="container py-3">
+    <div class="projects-subsection">
+        <h4 class="subsection-title"><i class="bi bi-mortarboard me-2"></i>Academic & Personal Projects</h4>
+        <p class="subsection-desc text-secondary mb-4">Open-source projects built during university and personal learning journey.</p>
+        <div class="academic-projects-grid">
+            @foreach (var p in Academics)
+            {
+                <div class="academic-card glass-card">
+                    <div class="academic-card-header">
+                        <div class="academic-links">
+                            @if (!string.IsNullOrEmpty(p.Github))
+                            {
+                                <a href="@p.Github" target="_blank" title="View on GitHub"><i class="bi bi-github"></i></a>
+                            }
+                            @if (!string.IsNullOrEmpty(p.Live))
+                            {
+                                <a href="@p.Live" target="_blank" title="Live Demo"><i class="bi bi-box-arrow-up-right"></i></a>
+                            }
+                        </div>
+                    </div>
+                    <h5 class="academic-title">@p.Title</h5>
+                    <p class="academic-desc">@p.Desc</p>
+                    <div class="academic-tech">
+                        @foreach (var tech in p.Tech.Split(", "))
+                        {
+                            <span class="tech-badge-sm">@tech</span>
+                        }
+                    </div>
+                    @if (p.Features.Length > 0)
+                    {
+                        <ul class="academic-features">
+                            @foreach (var f in p.Features)
+                            {
+                                <li>@f</li>
+                            }
+                        </ul>
+                    }
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- 6️⃣ Achievements -->
+<section id="achievements" class="container section py-5 animate-fade-up delay-4">
+    <h2 class="section-title">Achievements</h2>
+    <ul>
+        <li>🥇 Champion – HackTheVerse (DU ITVerse 2020)</li>
+        <li>⚽ Represented IIT‑DU Football &amp; Cricket Teams</li>
+        <li>💡 Participated in multiple hackathons &amp; coding events</li>
+    </ul>
+</section>
+
+<!-- 7️⃣ Contact -->
+<section id="contact" class="contact-section text-center py-5 animate-fade-up delay-5">
+    <h2 class="text-gradient mb-3">Let’s Connect</h2>
+    <p>Email: <a class="text-info" href="mailto:s.rabiulislam429@gmail.com">s.rabiulislam429@gmail.com</a><br/>
+       📞 +8801308554743 / +8801633667872<br/>📍 Dhaka, Bangladesh</p>
+    <div class="social-links mt-3">
+        <a href="https://github.com/RI-Sujon" target="_blank"><i class="bi bi-github"></i></a>
+        <a href="https://www.linkedin.com/in/ri-sujon-58b63618a" target="_blank"><i class="bi bi-linkedin"></i></a>
+    </div>
+</section>
+
+@code {
+    readonly Dictionary<string,string[]> Skills = new()
+    {
+        ["Languages"]=new[]{"C","C++","C#","Java","Dart","JavaScript","TypeScript","PHP"},
+        ["Frameworks"]=new[]{"ASP.NET Core","NextJS","React","Angular","Flutter","Android"},
+        ["Databases"]=new[]{"MSSQL","MySQL","Firebase","MongoDB","PostgreSQL"},
+        ["Tools"]=new[]{"Git","Docker","Selenium","Fast Report","Agora","Chart.js"}
+    };
+
+    record Exp(string Role,string Company,string Duration,string[] Details);
+    List<Exp> Experiences = new() {
+        new("Software Engineer","LoneSock","Apr 2025 – Present", new[]{
+            "Developing scalable back‑end APIs & cloud‑services.",
+            "Integrating NextJS front‑ends with ASP.NET Core back‑end.",
+            "Optimizing database performance (PostgreSQL)."}),
+        new("Software Engineer / Junior Software Engineer / Intern","Orion Informatics Ltd","Jan 2022 – Mar 2025", new[]{
+            "Implemented ERP, Dashboard & Reporting modules using ASP.NET Core, React &amp; Angular.",
+            "Used Fast Report & MSSQL for data generation and reporting."})
+    };
+    record Role(string Title, string Period, string Length, string[] Technologies);
+    record Company(string Name, string Location, string TotalDuration, string Logo, Role[] Roles);
+    
+    List<Company> Companies = new() {
+        new("BJIT Ltd", "Dhaka-1212, Bangladesh", "August 2025 - Present", "BJIT_LOGO.png", new[] {
+            new Role("Software Engineer", "August 2025 - Present", "Current", new[] { "ASP.NET Core", "Blazor", "PostgreSQL" })
+        }),
+        new("LoneSock", "Dhaka-1000, Bangladesh", "April 2025 - July 2025 • 4 months", "LoneSock_LOGO.png", new[] {
+            new Role("Software Engineer", "April 2025 - July 2025", "4 months", new[] { "ASP.NET Core", "NextJS", "PostgreSQL" })
+        }),
+        new("Orion Informatics Ltd", "Dhaka-1205, Bangladesh", "January 2022 - March 2025 • 3 years 3 months", "Orion_LOGO.png", new[] {
+            new Role("Software Engineer", "December 2023 - March 2025", "1 year 4 months", new[] { "ASP.NET Core", "MSSQL", "Fast Report" }),
+            new Role("Junior Software Engineer", "July 2022 - November 2023", "1 year 5 months", new[] { "React", "ASP.NET Core", "MSSQL", "Fast Report" }),
+            new Role("Software Engineer Intern", "January 2022 - June 2022", "6 months", new[] { "Angular", "Blockchain" })
+        })
+    };
+    record Project(string Title, string Tech, string Desc);
+    List<Project> ProProjects = new(){
+        new("Densan-Pharmaceutical Inventory System", "Blazor, PostgreSQL", "Migrating a VB6 PC apps to Web Application using Blazor Framework."),
+        new("Power Division ERP", "ASP.NET Core, MSSQL, Fast Report", "Enterprise ERP system for inventory and performance tracking."),
+        new("Boooks.Net", "ASP.NET Core, NextJS, PostgreSQL", "Full-stack book-shop management web application."),
+        new("ERP Dashboard", "ASP.NET Core, Chart.js", "Dynamic data visualization dashboards."),
+        new("Identity Protection - Sontiq Sphere", "React", "Enhanced UI components and user interactions."),
+        new("LikeHome.Care", "Flutter (Dart), Firebase", "Developed a mobile app for in-home daycare services, connecting caregivers with parents. Implemented a seamless multi-step registration process with integrated payment gateway support.")
+    };
+
+    record AcademicProject(string Title, string Tech, string Desc, string Github, string Live, string[] Features);
+    List<AcademicProject> Academics = new(){
+        new("Cricket Live Streaming with Live Score", "Flutter, React, ASP.NET Core, Firebase",
+            "A complete live cricket streaming solution with real-time score updates and match history.",
+            "https://github.com/RI-Sujon", "",
+            new[] { "Live video streaming via Agora SDK", "Real-time score updates with Firebase", "Three Android devices for video, commentary and scoring", "Match history and statistics" }),
+        new("Tutors Planet", "Android (Java), Firebase",
+            "Mobile app connecting guardians with qualified tutors for personalized education.",
+            "https://github.com/RI-Sujon", "",
+            new[] { "Tutor-guardian matching system", "Student management modules", "Real-time chat functionality", "Rating and review system" }),
+        new("Attendance Management System", "Angular, ASP.NET Core, MSSQL",
+            "Admin portal for managing courses, teachers and students with live attendance tracking.",
+            "https://github.com/RI-Sujon", "",
+            new[] { "Course and teacher management", "Live attendance tracking", "Student announcements", "Admin dashboard" }),
+        new("Stocker.io", "Angular, Django",
+            "Stock market analysis and data visualization website for financial insights.",
+            "https://github.com/RI-Sujon", "",
+            new[] { "Real-time stock data", "Interactive charts", "Portfolio tracking", "Market analysis tools" }),
+        new("Web Scraping and Parsing Library", "C",
+            "Custom library to extract structured data from HTML pages efficiently.",
+            "https://github.com/RI-Sujon", "",
+            new[] { "HTML parsing engine", "CSS selector support", "Memory efficient", "Cross-platform compatible" }),
+        new("Prescription Management System", "Angular, ASP.NET Core, MSSQL",
+            "Platform for doctors to track patients and manage prescriptions digitally.",
+            "https://github.com/RI-Sujon", "",
+            new[] { "Patient records management", "Digital prescriptions", "Medical history tracking", "Appointment scheduling" }),
+        new("Library Management System", "Angular, Laravel, MSSQL",
+            "Complete website for book circulation and member records management.",
+            "https://github.com/RI-Sujon", "",
+            new[] { "Book catalog system", "Member management", "Borrowing and returns", "Fine calculation" }),
+        new("Face Mask Detection", "Java",
+            "Image processing project detecting mask usage with high accuracy.",
+            "https://github.com/RI-Sujon", "",
+            new[] { "Real-time detection", "High accuracy ML model", "Multiple face support", "Alert system" }),
+        new("Wumpus World and Gomoku Games", "Android (Java)",
+            "Two interactive Android AI games with intelligent opponents.",
+            "https://github.com/RI-Sujon", "",
+            new[] { "AI-powered opponents", "Multiple difficulty levels", "Score tracking", "Intuitive UI" })
+    };
+
+    async Task Scroll(string id) => await JS.InvokeVoidAsync("scrollToSection", id);
+}
