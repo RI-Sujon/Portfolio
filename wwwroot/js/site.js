@@ -82,3 +82,55 @@ document.addEventListener('DOMContentLoaded', () => {
     window.initScrollAnimations();
     window.initTypingEffect();
 });
+
+// Scroll indicator observer - hides when contact section is visible
+window.initScrollIndicatorObserver = (dotNetRef) => {
+    const contactSection = document.getElementById('contact');
+    if (!contactSection) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            dotNetRef.invokeMethodAsync('OnContactSectionVisible', entry.isIntersecting);
+        });
+    }, { threshold: 0.3 });
+
+    observer.observe(contactSection);
+};
+
+// Get the next section index based on current scroll position
+window.getNextSectionIndex = (sectionIds) => {
+    const scrollTop = window.scrollY || window.pageYOffset;
+    const windowHeight = window.innerHeight;
+    
+    for (let i = 0; i < sectionIds.length; i++) {
+        const section = document.getElementById(sectionIds[i]);
+        if (section) {
+            const rect = section.getBoundingClientRect();
+            // If this section's top is below 20% of viewport, scroll to it
+            if (rect.top > windowHeight * 0.2) {
+                return i;
+            }
+        }
+    }
+    // If we're at the last section, stay there
+    return sectionIds.length - 1;
+};
+
+// Direct scroll to next section
+window.scrollToNextSection = (sectionIds) => {
+    const scrollTop = window.scrollY || window.pageYOffset;
+    const windowHeight = window.innerHeight;
+    
+    for (let i = 0; i < sectionIds.length; i++) {
+        const section = document.getElementById(sectionIds[i]);
+        if (section) {
+            const rect = section.getBoundingClientRect();
+            // Find first section whose top is more than 100px below viewport top
+            if (rect.top > 100) {
+                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                return i;
+            }
+        }
+    }
+    return -1;
+};

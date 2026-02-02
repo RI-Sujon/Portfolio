@@ -1,133 +1,305 @@
 ﻿@page "/"
 @inject IJSRuntime JS
 
-<!-- 1️⃣ Home -->
-<section id="home" class="hero d-flex flex-column justify-content-center align-items-center text-center vh-100">
+<!-- 1???Home -->
+<section id="home" class="hero section vh-100">
+    <!-- Animated Background Grid -->
+    <div class="hero-grid"></div>
+    
     <!-- Floating Orbs Background -->
     <div class="hero-orb orb-1"></div>
     <div class="hero-orb orb-2"></div>
     <div class="hero-orb orb-3"></div>
+    <div class="hero-orb orb-4"></div>
     
     <!-- Particles Container -->
     <div class="particles"></div>
     
-    <!-- Profile Image with Glow -->
-    <img src="images/profile.jpg" class="rounded-circle profile-img mb-4 animate-scale" width="150" height="150" alt="Rabiul Islam"/>
+    <!-- Floating Code Snippets -->
+    <div class="floating-code code-1">&lt;Developer /&gt;</div>
+    <div class="floating-code code-2">{ creative: true }</div>
+    <div class="floating-code code-3">async () =&gt; success</div>
     
-    <!-- Name with Gradient -->
-    <h1 class="display-4 fw-bold text-gradient animate-fade-up delay-1">Rabiul Islam Sujon</h1>
-    
-    <!-- Dynamic Typing Effect -->
-    <div class="typing-wrapper animate-fade-up delay-2">
-        <h4 class="subtitle-shimmer">
-            <span class="typing-dynamic">Full-Stack Developer</span><span class="typing-cursor">|</span>
-        </h4>
-        <p class="text-secondary mt-2">
-            <i class="bi bi-geo-alt me-1"></i> Dhaka, Bangladesh
-        </p>
-    </div>
-
-    <!-- Social Links -->
-    <div class="mt-4 social-links animate-fade-up delay-4">
-        <a href="https://github.com/RI-Sujon" target="_blank" title="GitHub"><i class="bi bi-github"></i></a>
-        <a href="https://www.linkedin.com/in/ri-sujon-58b63618a/" target="_blank" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
-        <a href="mailto:s.rabiulislam429@gmail.com" title="Email"><i class="bi bi-envelope-fill"></i></a>
-    </div>
-    
-    <!-- Tagline -->
-    <p class="text-light-50 mt-3 px-3 animate-fade-up delay-3" style="max-width: 600px; font-size: 1.1rem; line-height: 1.8; color: #8892b0;">
-        "Crafting elegant solutions through code — transforming complex ideas into seamless, scalable applications."
-    </p>
-    
-    <!-- Scroll Indicator -->
-    <div class="scroll-indicator animate-fade-in delay-6" @onclick='() => Scroll("about")'>
-        <span>Scroll</span>
-        <i class="bi bi-chevron-double-down"></i>
-    </div>
-</section>
-
-<!-- 2️⃣ About -->
-<section id="about" class="container section py-5 animate-fade-up">
-    <h2 class="section-title">About Me</h2>
-    <div class="about-content">
-        <div class="about-text">
-            <p class="about-intro">
-                I'm <span class="text-gradient fw-bold">Rabiul Islam</span>, a passionate <strong>Software Engineer</strong> with over <span class="highlight">3.5+ years of experience</span> in full-stack development.
-                I love creating reliable, high-quality software that blends performance, usability, and clean architecture.
-            </p>
-            <p>
-                Throughout my career, I've worked extensively with <span class="tech-tag">ASP.NET Core</span>, <span class="tech-tag">React</span>, <span class="tech-tag">NextJS</span>, <span class="tech-tag">Angular</span>, <span class="tech-tag">Flutter</span>, and <span class="tech-tag">Android</span>, delivering scalable applications across web and mobile platforms.
-                From designing intuitive UIs to building robust APIs, I enjoy solving complex technical challenges and continuously learning new technologies.
-            </p>
-        </div>
-        
-        <div class="about-cards mt-4">
-            <div class="glass-card about-card p-4">
-                <div class="about-icon">🎓</div>
-                <h5 class="text-info">Education</h5>
-                <p class="mb-1"><strong>BSc in Software Engineering</strong></p>
-                <p class="text-secondary mb-1">Institute of Information Technology (<strong>IIT</strong>)</p>
-                <p class="text-secondary mb-1"><strong>University of Dhaka</strong></p>
-                <p class="text-info">CGPA: 3.47 / 4.00 | 2018 – 2021</p>
+    <div class="hero-container">
+        <!-- Left Content -->
+        <div class="hero-content">
+            <br/>
+            <!-- Status Badge -->
+            <div class="hero-status animate-fade-up">
+                <span class="status-dot"></span>
+                <span>Available for opportunities</span>
             </div>
             
-            <div class="glass-card about-card p-4">
-                <div class="about-icon">⚡</div>
-                <h5 class="text-info">Beyond Code</h5>
-                <p class="mb-2">I'm a sports enthusiast — proudly represented <strong>IIT‑DU</strong> in <span class="highlight">Football</span> and <span class="highlight">Cricket</span> tournaments.</p>
-                <p class="mb-0">In 2020, I became the <span class="text-gradient fw-bold">Champion of HackTheVerse</span>, a nationwide hackathon by <strong>DU ITVerse</strong>.</p>
+            <p class="hero-greeting animate-fade-up delay-1">
+                <span class="wave-emoji">👋</span> Hello, I'm
+            </p>
+            
+            <!-- Name with Gradient -->
+            <h1 class="hero-name animate-fade-up delay-1">
+                <span class="text-gradient">Rabiul Islam</span>
+                <span class="name-highlight">Sujon</span>
+            </h1>
+            
+            <!-- Role with Typing Effect -->
+            <div class="hero-role animate-fade-up delay-2">
+                <span class="role-prefix">I'm a</span>
+                <span class="role-text">
+                    <span class="typing-dynamic">Full-Stack Developer</span>
+                    <span class="typing-cursor">|</span>
+                </span>
+            </div>
+            
+            <!-- Experience Stats -->
+            <div class="hero-stats animate-fade-up delay-2">
+                <div class="stat-item">
+                    <span class="stat-number">4+</span>
+                    <span class="stat-label">Years Exp.</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number">20+</span>
+                    <span class="stat-label">Projects</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number">6+</span>
+                    <span class="stat-label">Tech Stack</span>
+                </div>
+            </div>
+            
+            <!-- Tech Stack Icons -->
+            <div class="hero-tech-icons animate-fade-up delay-3">
+                <div class="tech-icon-wrapper" title=".NET Core">
+                    <div class="tech-icon">
+                        <i class="bi bi-gear-wide-connected"></i>
+                    </div>
+                    <span>.NET</span>
+                </div>
+                <div class="tech-icon-wrapper" title="React">
+                    <div class="tech-icon react">
+                        <i class="bi bi-atom"></i>
+                    </div>
+                    <span>React</span>
+                </div>
+                <div class="tech-icon-wrapper" title="Flutter">
+                    <div class="tech-icon flutter">
+                        <i class="bi bi-phone"></i>
+                    </div>
+                    <span>Flutter</span>
+                </div>
+                <div class="tech-icon-wrapper" title="SQL Server">
+                    <div class="tech-icon sql">
+                        <i class="bi bi-database"></i>
+                    </div>
+                    <span>SQL</span>
+                </div>
+                <div class="tech-icon-wrapper" title="Angular">
+                    <div class="tech-icon angular">
+                        <i class="bi bi-triangle"></i>
+                    </div>
+                    <span>Angular</span>
+                </div>
+            </div>
+            
+            <!-- Social Links - Clean Style -->
+            <div class="hero-social-clean animate-fade-up delay-4">
+                <a href="https://github.com/RI-Sujon" target="_blank" title="GitHub" class="social-link-clean">
+                    <i class="bi bi-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/ri-sujon-58b63618a/" target="_blank" title="LinkedIn" class="social-link-clean">
+                    <i class="bi bi-linkedin"></i>
+                </a>
+                <a href="mailto:s.rabiulislam429@gmail.com" title="Email" class="social-link-clean">
+                    <i class="bi bi-envelope-fill"></i>
+                </a>
             </div>
         </div>
         
-        <p class="about-quote mt-4">
-            <i class="bi bi-quote text-info"></i>
-            I believe technology should make people's lives easier — and I love being part of that transformation.
-        </p>
+        <!-- Right - Full Body Image -->
+        <div class="hero-image-section animate-scale">
+            <!-- Decorative Elements -->
+            <div class="image-decoration deco-circle-1"></div>
+            <div class="image-decoration deco-circle-2"></div>
+            <div class="image-decoration deco-dots"></div>
+            
+            <!-- Orbiting Icons -->
+            <div class="orbiting-icons">
+                <div class="orbit-icon orbit-1"><i class="bi bi-code-slash"></i></div>
+                <div class="orbit-icon orbit-2"><i class="bi bi-braces"></i></div>
+                <div class="orbit-icon orbit-3"><i class="bi bi-terminal"></i></div>
+            </div>
+            
+            <!-- Main Image Container -->
+            <div class="hero-image-wrapper">
+                <div class="hero-image-glow"></div>
+                <div class="hero-image-frame">
+                    <img src="images/full_pic.jpg" class="hero-full-image" alt="Rabiul Islam"/>
+                </div>
+                <div class="hero-image-border"></div>
+            </div>
+            
+            <!-- Experience Badge -->
+            <div class="experience-badge">
+                <span class="exp-number">4+</span>
+                <span class="exp-text">Years Experience</span>
+            </div>
+            
+            <!-- Location Tag -->
+            <div class="location-tag">
+                <i class="bi bi-geo-alt-fill"></i>
+                <span>Dhaka, Bangladesh</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Mouse Scroll Indicator inside hero -->
+    <div class="hero-scroll-hint">
+        <div class="mouse">
+            <div class="mouse-wheel"></div>
+        </div>
+        <span>Scroll to explore</span>
     </div>
 </section>
 
-<!-- 3️⃣ Skills -->
-<section id="skills" class="container py-5 section animate-fade-up delay-1">
-    <h2 class="section-title">Skills</h2>
-    <div class="row g-4">
+<!-- Fixed Scroll Indicator -->
+<div class="scroll-mouse @(hideScrollIndicator ? "hidden" : "")" @onclick="ScrollToNextSection">
+    <div class="mouse">
+        <div class="mouse-wheel"></div>
+    </div>
+    <div class="scroll-arrows">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>
+
+<!-- About Section -->
+<section id="about" class="container section">
+    <div class="section-header animate-fade-up">
+        <span class="section-label">Get to know me</span>
+        <h2 class="section-title-new">About Me</h2>
+    </div>
+    <div class="about-content-new">
+        <div class="about-text-card glass-card-enhanced animate-fade-up delay-1">
+            <div class="about-text-inner">
+                <p class="about-intro-new">
+                    I'm <span class="text-gradient fw-bold">Rabiul Islam</span>, a passionate <strong>Software Engineer</strong> with over <span class="highlight-badge">4+ years of experience</span> in full-stack development.
+                    I love creating reliable, high-quality software that blends performance, usability, and clean architecture.
+                </p>
+                <p>
+                    Throughout my career, I've worked extensively with <span class="tech-tag-glow">ASP.NET Core</span>, <span class="tech-tag-glow">React</span>, <span class="tech-tag-glow">NextJS</span>, <span class="tech-tag-glow">Angular</span>, <span class="tech-tag-glow">Flutter</span>, and <span class="tech-tag-glow">Android</span>, delivering scalable applications across web and mobile platforms.
+                </p>
+            </div>
+            <div class="about-quote-new">
+                <i class="bi bi-quote"></i>
+                <span>I believe technology should make people's lives easier — and I love being part of that transformation.</span>
+            </div>
+        </div>
+        
+        <div class="about-cards-new">
+            <div class="education-card-premium glass-card-enhanced animate-fade-up delay-2">
+                <div class="edu-card-top">
+                    <div class="university-logo">
+                        <img src="images/UniversityOfDhaka_LOGO.png" alt="University of Dhaka" />
+                    </div>
+                    <div class="edu-title-area">
+                        <span class="edu-tag">Education</span>
+                        <h5 class="edu-degree">BSc in Software Engineering</h5>
+                    </div>
+                </div>
+                <div class="edu-details">
+                    <div class="edu-info-row">
+                        <i class="bi bi-building"></i>
+                        <span>Institute of Information Technology (IIT)</span>
+                    </div>
+                    <div class="edu-info-row">
+                        <i class="bi bi-geo-alt"></i>
+                        <span>University of Dhaka</span>
+                    </div>
+                    <div class="edu-info-row">
+                        <i class="bi bi-calendar3"></i>
+                        <span>2018 - 2021</span>
+                    </div>
+                </div>
+                <div class="edu-footer">
+                    <div class="edu-cgpa">
+                        <span class="cgpa-label">CGPA</span>
+                        <span class="cgpa-score">3.47<span class="cgpa-max">/4.00</span></span>
+                    </div>
+                    <div class="edu-status">
+                        <i class="bi bi-patch-check-fill"></i>
+                        <span>Completed</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="about-card-new glass-card-enhanced animate-fade-up delay-3">
+                <div class="about-card-icon achievement">
+                    <i class="bi bi-trophy-fill"></i>
+                </div>
+                <div class="about-card-content">
+                    <h5>Beyond Code</h5>
+                    <div class="achievement-item-about">
+                        <i class="bi bi-dribbble"></i>
+                        <span>Represented IIT-DU in Football and Cricket</span>
+                    </div>
+                    <div class="achievement-item-about highlight">
+                        <i class="bi bi-award-fill"></i>
+                        <span>Champion - HackTheVerse 2020</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="container section">
+    <div class="section-header animate-fade-up">
+        <span class="section-label">What I work with</span>
+        <h2 class="section-title-new">Skills & Technologies</h2>
+    </div>
+    <div class="skills-grid-new">
+        @{ var skillIcons = new Dictionary<string, string> { 
+            {"Languages", "bi-code-slash"}, 
+            {"Frameworks", "bi-layers"}, 
+            {"Databases", "bi-database"}, 
+            {"Tools", "bi-tools"} 
+        }; }
+        @{ var skillColors = new Dictionary<string, string> { 
+            {"Languages", "cyan"}, 
+            {"Frameworks", "purple"}, 
+            {"Databases", "pink"}, 
+            {"Tools", "orange"} 
+        }; }
         @foreach (var cat in Skills)
         {
-            <div class="col-md-6">
-                <div class="glass-card skill-card p-4 h-100">
-                    <div class="skill-icon mb-3">
-                        @if (cat.Key == "Languages")
-                        {
-                            <i class="bi bi-code-slash"></i>
-                        }
-                        else if (cat.Key == "Frameworks")
-                        {
-                            <i class="bi bi-layers"></i>
-                        }
-                        else if (cat.Key == "Databases")
-                        {
-                            <i class="bi bi-database"></i>
-                        }
-                        else
-                        {
-                            <i class="bi bi-tools"></i>
-                        }
+            var iconClass = skillIcons.ContainsKey(cat.Key) ? skillIcons[cat.Key] : "bi-tools";
+            var colorClass = skillColors.ContainsKey(cat.Key) ? skillColors[cat.Key] : "cyan";
+            <div class="skill-card-new glass-card-enhanced animate-fade-up delay-1">
+                <div class="skill-card-header">
+                    <div class="skill-icon-new @colorClass">
+                        <i class="bi @iconClass"></i>
                     </div>
-                    <h5 class="skill-title text-info mb-3">@cat.Key</h5>
-                    <div class="skill-tags">
-                        @foreach (var skill in cat.Value)
-                        {
-                            <span class="skill-tag">@skill</span>
-                        }
-                    </div>
+                    <h5 class="skill-title-new">@cat.Key</h5>
+                    <span class="skill-count">@cat.Value.Length items</span>
+                </div>
+                <div class="skill-tags-new">
+                    @foreach (var skill in cat.Value)
+                    {
+                        <span class="skill-tag-new @colorClass">@skill</span>
+                    }
                 </div>
             </div>
         }
     </div>
 </section>
-
-<!-- 4️⃣ Experience -->
-<section id="experience" class="container section py-5 animate-fade-up delay-2">
-    <h2 class="section-title">Experience</h2>
+<!-- 4???Experience -->
+<section id="experience" class="container section">
+    <div class="section-header animate-fade-up">
+        <span class="section-label">My Journey</span>
+        <h2 class="section-title-new">Work Experience</h2>
+    </div>
     <div class="experience-grid">
         @for (int idx = 0; idx < Companies.Count; idx++)
         {
@@ -151,7 +323,7 @@
                             <div class="role-marker"></div>
                             <div class="role-content">
                                 <h5 class="role-title">@role.Title</h5>
-                                <p class="role-period"><i class="bi bi-clock me-1"></i>@role.Period <span class="role-length">• @role.Length</span></p>
+                                <p class="role-period"><i class="bi bi-clock me-1"></i>@role.Period <span class="role-length">? @role.Length</span></p>
                                 <div class="role-tech">
                                     @foreach (var tech in role.Technologies)
                                     {
@@ -167,12 +339,15 @@
     </div>
 </section>
 
-<!-- 5️⃣ Projects -->
-<section id="projects" class="container section py-5 animate-fade-up delay-3">
-    <h2 class="section-title">Projects</h2>
+<!-- 5???Projects -->
+<section id="projects" class="container section">
+    <div class="section-header animate-fade-up">
+        <span class="section-label">What I've built</span>
+        <h2 class="section-title-new">Projects</h2>
+    </div>
 
     <!-- Professional Projects -->
-    <div class="projects-subsection mb-5">
+    <div class="projects-subsection mb-5 animate-fade-up delay-1">
         <h4 class="subsection-title"><i class="bi bi-briefcase me-2"></i>Professional Projects</h4>
         <p class="subsection-desc text-secondary mb-4">Company projects with limited public details due to confidentiality.</p>
         <div class="pro-projects-grid">
@@ -198,7 +373,7 @@
 </section>
 
 <!-- Academic Projects New Section -->
-<section id="academic-new" class="container py-3">
+<section id="academic-new" class="container section">
     <div class="projects-subsection">
         <h4 class="subsection-title"><i class="bi bi-mortarboard me-2"></i>Academic & Personal Projects</h4>
         <p class="subsection-desc text-secondary mb-4">Open-source projects built during university and personal learning journey.</p>
@@ -208,9 +383,18 @@
                 <div class="academic-card glass-card">
                     <div class="academic-card-header">
                         <div class="academic-links">
-                            @if (!string.IsNullOrEmpty(p.Github))
+                            @if (!string.IsNullOrEmpty(p.GithubFrontend) && !string.IsNullOrEmpty(p.GithubBackend))
                             {
-                                <a href="@p.Github" target="_blank" title="View on GitHub"><i class="bi bi-github"></i></a>
+                                <a href="@p.GithubFrontend" target="_blank" title="Frontend Repository"><i class="bi bi-github"></i><span class="link-label">FE</span></a>
+                                <a href="@p.GithubBackend" target="_blank" title="Backend Repository"><i class="bi bi-github"></i><span class="link-label">BE</span></a>
+                            }
+                            else if (!string.IsNullOrEmpty(p.GithubFrontend))
+                            {
+                                <a href="@p.GithubFrontend" target="_blank" title="View on GitHub"><i class="bi bi-github"></i></a>
+                            }
+                            else if (!string.IsNullOrEmpty(p.GithubBackend))
+                            {
+                                <a href="@p.GithubBackend" target="_blank" title="View on GitHub"><i class="bi bi-github"></i></a>
                             }
                             @if (!string.IsNullOrEmpty(p.Live))
                             {
@@ -241,18 +425,48 @@
     </div>
 </section>
 
-<!-- 6️⃣ Achievements -->
-<section id="achievements" class="container section py-5 animate-fade-up delay-4">
-    <h2 class="section-title">Achievements</h2>
-    <ul>
-        <li>🥇 Champion – HackTheVerse (DU ITVerse 2020)</li>
-        <li>⚽ Represented IIT‑DU Football &amp; Cricket Teams</li>
-        <li>💡 Participated in multiple hackathons &amp; coding events</li>
-    </ul>
+<!-- 6???Achievements -->
+<section id="achievements" class="container section">
+    <div class="section-header animate-fade-up">
+        <span class="section-label">Recognition & Awards</span>
+        <h2 class="section-title-new">Achievements</h2>
+    </div>
+    <div class="achievements-grid">
+        <div class="achievement-card glass-card-enhanced animate-fade-up delay-1">
+            <div class="achievement-card-icon gold">
+                <i class="bi bi-trophy-fill"></i>
+            </div>
+            <div class="achievement-card-content">
+                <h5>HackTheVerse Champion</h5>
+                <p>DU ITVerse 2020</p>
+                <span class="achievement-tag">Hackathon</span>
+            </div>
+        </div>
+        <div class="achievement-card glass-card-enhanced animate-fade-up delay-2">
+            <div class="achievement-card-icon blue">
+                <i class="bi bi-dribbble"></i>
+            </div>
+            <div class="achievement-card-content">
+                <h5>Sports Representative</h5>
+                <p>IIT-DU Football & Cricket Teams</p>
+                <span class="achievement-tag">Athletics</span>
+            </div>
+        </div>
+        <div class="achievement-card glass-card-enhanced animate-fade-up delay-3">
+            <div class="achievement-card-icon purple">
+                <i class="bi bi-code-square"></i>
+            </div>
+            <div class="achievement-card-content">
+                <h5>Hackathon Enthusiast</h5>
+                <p>Multiple hackathons & coding events</p>
+                <span class="achievement-tag">Competitions</span>
+            </div>
+        </div>
+    </div>
 </section>
 
 <!-- 7️⃣ Contact -->
-<section id="contact" class="contact-section text-center py-5 animate-fade-up delay-5">
+<section id="contact" class="contact-section section text-center animate-fade-up delay-5">
     <h2 class="text-gradient mb-3">Let’s Connect</h2>
     <p>Email: <a class="text-info" href="mailto:s.rabiulislam429@gmail.com">s.rabiulislam429@gmail.com</a><br/>
        📞 +8801308554743 / +8801633667872<br/>📍 Dhaka, Bangladesh</p>
@@ -260,9 +474,38 @@
         <a href="https://github.com/RI-Sujon" target="_blank"><i class="bi bi-github"></i></a>
         <a href="https://www.linkedin.com/in/ri-sujon-58b63618a" target="_blank"><i class="bi bi-linkedin"></i></a>
     </div>
+    
+    <!-- Download CV Button -->
+    <a href="CV.pdf" download class="btn-download-cv mt-4">
+        <i class="bi bi-download me-2"></i>Download CV
+    </a>
 </section>
 
 @code {
+    bool hideScrollIndicator = false;
+    string[] sectionIds = { "home", "about", "skills", "experience", "projects", "academic-new", "achievements", "contact" };
+    int currentSectionIndex = 0;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JS.InvokeVoidAsync("initScrollIndicatorObserver", DotNetObjectReference.Create(this));
+        }
+    }
+
+    [JSInvokable]
+    public void OnContactSectionVisible(bool isVisible)
+    {
+        hideScrollIndicator = isVisible;
+        StateHasChanged();
+    }
+
+    async Task ScrollToNextSection()
+    {
+        await JS.InvokeVoidAsync("scrollToNextSection", new object[] { sectionIds });
+    }
+
     readonly Dictionary<string,string[]> Skills = new()
     {
         ["Languages"]=new[]{"C","C++","C#","Java","Dart","JavaScript","TypeScript","PHP"},
@@ -307,43 +550,43 @@
         new("LikeHome.Care", "Flutter (Dart), Firebase", "Developed a mobile app for in-home daycare services, connecting caregivers with parents. Implemented a seamless multi-step registration process with integrated payment gateway support.")
     };
 
-    record AcademicProject(string Title, string Tech, string Desc, string Github, string Live, string[] Features);
+    record AcademicProject(string Title, string Tech, string Desc, string GithubFrontend, string GithubBackend, string Live, string[] Features);
     List<AcademicProject> Academics = new(){
         new("Cricket Live Streaming with Live Score", "Flutter, React, ASP.NET Core, Firebase",
             "A complete live cricket streaming solution with real-time score updates and match history.",
-            "https://github.com/RI-Sujon", "",
+            "https://github.com/RI-Sujon/CricketLiveStreamingWithLiveScore", "", "facebook.com/RI.Sujon",
             new[] { "Live video streaming via Agora SDK", "Real-time score updates with Firebase", "Three Android devices for video, commentary and scoring", "Match history and statistics" }),
         new("Tutors Planet", "Android (Java), Firebase",
             "Mobile app connecting guardians with qualified tutors for personalized education.",
-            "https://github.com/RI-Sujon", "",
+            "https://github.com/RI-Sujon/TutorsPlanet", "", "",
             new[] { "Tutor-guardian matching system", "Student management modules", "Real-time chat functionality", "Rating and review system" }),
         new("Attendance Management System", "Angular, ASP.NET Core, MSSQL",
             "Admin portal for managing courses, teachers and students with live attendance tracking.",
-            "https://github.com/RI-Sujon", "",
+            "https://github.com/RI-Sujon/AttendanceManagementSystemFrontEnd", "https://github.com/RI-Sujon/AttendanceManagementSystemBackEnd", "",
             new[] { "Course and teacher management", "Live attendance tracking", "Student announcements", "Admin dashboard" }),
         new("Stocker.io", "Angular, Django",
             "Stock market analysis and data visualization website for financial insights.",
-            "https://github.com/RI-Sujon", "",
+            "https://github.com/RI-Sujon", "", "",
             new[] { "Real-time stock data", "Interactive charts", "Portfolio tracking", "Market analysis tools" }),
         new("Web Scraping and Parsing Library", "C",
             "Custom library to extract structured data from HTML pages efficiently.",
-            "https://github.com/RI-Sujon", "",
+            "https://github.com/RI-Sujon", "", "",
             new[] { "HTML parsing engine", "CSS selector support", "Memory efficient", "Cross-platform compatible" }),
         new("Prescription Management System", "Angular, ASP.NET Core, MSSQL",
             "Platform for doctors to track patients and manage prescriptions digitally.",
-            "https://github.com/RI-Sujon", "",
+            "https://github.com/RI-Sujon", "", "",
             new[] { "Patient records management", "Digital prescriptions", "Medical history tracking", "Appointment scheduling" }),
         new("Library Management System", "Angular, Laravel, MSSQL",
             "Complete website for book circulation and member records management.",
-            "https://github.com/RI-Sujon", "",
+            "https://github.com/RI-Sujon", "", "",
             new[] { "Book catalog system", "Member management", "Borrowing and returns", "Fine calculation" }),
         new("Face Mask Detection", "Java",
             "Image processing project detecting mask usage with high accuracy.",
-            "https://github.com/RI-Sujon", "",
+            "https://github.com/RI-Sujon", "", "",
             new[] { "Real-time detection", "High accuracy ML model", "Multiple face support", "Alert system" }),
         new("Wumpus World and Gomoku Games", "Android (Java)",
             "Two interactive Android AI games with intelligent opponents.",
-            "https://github.com/RI-Sujon", "",
+            "https://github.com/RI-Sujon", "", "",
             new[] { "AI-powered opponents", "Multiple difficulty levels", "Score tracking", "Intuitive UI" })
     };
 
