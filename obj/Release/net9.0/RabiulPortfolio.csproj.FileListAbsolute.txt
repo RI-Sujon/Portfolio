@@ -1074,10 +1074,10 @@ E:\Doom\RabiulPortfolio\obj\Release\net9.0\RabiulPortfolio.dll
 E:\Doom\RabiulPortfolio\obj\Release\net9.0\refint\RabiulPortfolio.dll
 E:\Doom\RabiulPortfolio\obj\Release\net9.0\RabiulPortfolio.pdb
 E:\Doom\RabiulPortfolio\obj\Release\net9.0\ref\RabiulPortfolio.dll
-E:\Doom\RabiulPortfolio\bin\Release\net9.0\wwwroot\_framework\RabiulPortfolio.jmr32v3niy.wasm
-E:\Doom\RabiulPortfolio\bin\Release\net9.0\wwwroot\_framework\RabiulPortfolio.39lozgeysl.pdb
-E:\Doom\RabiulPortfolio\bin\Release\net9.0\wwwroot\_framework\RabiulPortfolio.jmr32v3niy.wasm.gz
-E:\Doom\RabiulPortfolio\bin\Release\net9.0\wwwroot\_framework\RabiulPortfolio.39lozgeysl.pdb.gz
-E:\Doom\RabiulPortfolio\obj\Release\net9.0\compressed\cy1p25py1w-jmr32v3niy.gz
-E:\Doom\RabiulPortfolio\obj\Release\net9.0\compressed\abli6ppgc9-39lozgeysl.gz
-E:\Doom\RabiulPortfolio\obj\Release\net9.0\compressed\aoharnrig0-5381daktrr.gz
+E:\Doom\RabiulPortfolio\bin\Release\net9.0\wwwroot\_framework\RabiulPortfolio.appeqba9wj.wasm
+E:\Doom\RabiulPortfolio\bin\Release\net9.0\wwwroot\_framework\RabiulPortfolio.58e4wh14fl.pdb
+E:\Doom\RabiulPortfolio\bin\Release\net9.0\wwwroot\_framework\RabiulPortfolio.appeqba9wj.wasm.gz
+E:\Doom\RabiulPortfolio\bin\Release\net9.0\wwwroot\_framework\RabiulPortfolio.58e4wh14fl.pdb.gz
+E:\Doom\RabiulPortfolio\obj\Release\net9.0\compressed\cy1p25py1w-appeqba9wj.gz
+E:\Doom\RabiulPortfolio\obj\Release\net9.0\compressed\abli6ppgc9-58e4wh14fl.gz
+E:\Doom\RabiulPortfolio\obj\Release\net9.0\compressed\aoharnrig0-x0becpxvqk.gz
