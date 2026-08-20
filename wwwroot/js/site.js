@@ -81,6 +81,17 @@ document.addEventListener('DOMContentLoaded', () => {
     window.createParticles();
     window.initScrollAnimations();
     window.initTypingEffect();
+    // Prevent auto-focus outline on page load
+    if (document.activeElement && document.activeElement !== document.body) {
+        document.activeElement.blur();
+    }
+});
+
+// Also handle Blazor re-renders
+document.addEventListener('blazor:afterUpdate', () => {
+    if (document.activeElement && document.activeElement.tagName === 'H1') {
+        document.activeElement.blur();
+    }
 });
 
 // Scroll indicator observer - hides when contact section is visible
