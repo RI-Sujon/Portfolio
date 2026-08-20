@@ -1,0 +1,52 @@
+<!-- Academic Projects New Section -->
+<section id="academic-new" class="container section">
+    <div class="projects-subsection">
+        <h4 class="subsection-title"><i class="bi bi-mortarboard me-2"></i>Academic & Personal Projects</h4>
+        <p class="subsection-desc text-secondary mb-4">Open-source projects built during university and personal learning journey.</p>
+        <div class="academic-projects-grid">
+            @foreach (var p in PortfolioData.Academics)
+            {
+                <div class="academic-card glass-card">
+                    <div class="academic-card-header">
+                        <div class="academic-links">
+                            @if (!string.IsNullOrEmpty(p.GithubFrontend) && !string.IsNullOrEmpty(p.GithubBackend))
+                            {
+                                <a href="@p.GithubFrontend" target="_blank" title="Frontend Repository"><i class="bi bi-github"></i><span class="link-label">FE</span></a>
+                                <a href="@p.GithubBackend" target="_blank" title="Backend Repository"><i class="bi bi-github"></i><span class="link-label">BE</span></a>
+                            }
+                            else if (!string.IsNullOrEmpty(p.GithubFrontend))
+                            {
+                                <a href="@p.GithubFrontend" target="_blank" title="View on GitHub"><i class="bi bi-github"></i></a>
+                            }
+                            else if (!string.IsNullOrEmpty(p.GithubBackend))
+                            {
+                                <a href="@p.GithubBackend" target="_blank" title="View on GitHub"><i class="bi bi-github"></i></a>
+                            }
+                            @if (!string.IsNullOrEmpty(p.Live))
+                            {
+                                <a href="@p.Live" target="_blank" title="Live Demo"><i class="bi bi-box-arrow-up-right"></i></a>
+                            }
+                        </div>
+                    </div>
+                    <h5 class="academic-title">@p.Title</h5>
+                    <p class="academic-desc">@p.Desc</p>
+                    <div class="academic-tech">
+                        @foreach (var tech in p.Tech.Split(", "))
+                        {
+                            <span class="tech-badge-sm">@tech</span>
+                        }
+                    </div>
+                    @if (p.Features.Length > 0)
+                    {
+                        <ul class="academic-features">
+                            @foreach (var f in p.Features)
+                            {
+                                <li>@f</li>
+                            }
+                        </ul>
+                    }
+                </div>
+            }
+        </div>
+    </div>
+</section>

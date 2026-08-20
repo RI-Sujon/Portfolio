@@ -1,0 +1,45 @@
+<!-- Experience Section -->
+<section id="experience" class="container section">
+    <div class="section-header animate-fade-up">
+        <span class="section-label">My Journey</span>
+        <h2 class="section-title-new">Work Experience</h2>
+    </div>
+    <div class="experience-grid">
+        @for (int idx = 0; idx < PortfolioData.Companies.Count; idx++)
+        {
+            var company = PortfolioData.Companies[idx];
+            var zigzagClass = idx % 2 == 0 ? "zigzag-left" : "zigzag-right";
+            <div class="experience-company glass-card exp-card-@idx @zigzagClass">
+                <div class="company-header">
+                    <div class="company-info">
+                        <h4 class="company-name">@company.Name</h4>
+                        <p class="company-location"><i class="bi bi-geo-alt me-1"></i>@company.Location</p>
+                        <p class="company-duration"><i class="bi bi-calendar3 me-1"></i>@company.TotalDuration</p>
+                    </div>
+                    <div class="company-logo-img">
+                        <img src="images/@(company.Logo)" alt="@company.Name" />
+                    </div>
+                </div>
+                <div class="roles-timeline">
+                    @foreach (var role in company.Roles)
+                    {
+                        <div class="role-item">
+                            <div class="role-marker"></div>
+                            <div class="role-content">
+                                <h5 class="role-title">@role.Title</h5>
+                                <p class="role-period"><i class="bi bi-clock me-1"></i>@role.Period <span class="role-length">• @role.Length</span></p>
+                                <div class="role-tech">
+                                    @foreach (var tech in role.Technologies)
+                                    {
+                                        <span class="tech-badge">@tech</span>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+</section>
+<br /><br /><br /><br />

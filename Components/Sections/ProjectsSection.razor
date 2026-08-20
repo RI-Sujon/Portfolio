@@ -1,0 +1,32 @@
+<!-- Projects Section -->
+<section id="projects" class="container section">
+    <div class="section-header animate-fade-up">
+        <span class="section-label">What I've built</span>
+        <h2 class="section-title-new">Projects</h2>
+    </div>
+
+    <!-- Professional Projects -->
+    <div class="projects-subsection mb-5 animate-fade-up delay-1">
+        <h4 class="subsection-title"><i class="bi bi-briefcase me-2"></i>Professional Projects</h4>
+        <p class="subsection-desc text-secondary mb-4">Company projects with limited public details due to confidentiality.</p>
+        <div class="pro-projects-grid">
+            @foreach (var p in PortfolioData.ProProjects)
+            {
+                <div class="pro-project-card">
+                    <div>
+                        <i class="bi bi-lock-fill lock-icon-wide"></i>
+                    </div>
+                    <h6 class="academic-title">@p.Title</h6>
+                    <div class="academic-tech">
+                        @foreach (var tech in p.Tech.Split(", "))
+                        {
+                            <span class="tech-badge-sm">@tech</span>
+                        }
+                    </div>
+                    <p class="pro-project-desc">@p.Desc</p>
+                </div>
+            }
+        </div>
+    </div>
+
+</section>

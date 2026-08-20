@@ -1,0 +1,41 @@
+<!-- Skills Section -->
+<section id="skills" class="container section">
+    <div class="section-header animate-fade-up">
+        <span class="section-label">What I work with</span>
+        <h2 class="section-title-new">Skills & Technologies</h2>
+    </div>
+    <div class="skills-grid-new">
+        @{ var skillIcons = new Dictionary<string, string> {
+            {"Languages", "bi-code-slash"},
+            {"Frameworks", "bi-layers"},
+            {"Databases", "bi-database"},
+            {"Tools", "bi-tools"}
+        }; }
+        @{ var skillColors = new Dictionary<string, string> {
+            {"Languages", "cyan"},
+            {"Frameworks", "purple"},
+            {"Databases", "pink"},
+            {"Tools", "orange"}
+        }; }
+        @foreach (var cat in PortfolioData.Skills)
+        {
+            var iconClass = skillIcons.ContainsKey(cat.Key) ? skillIcons[cat.Key] : "bi-tools";
+            var colorClass = skillColors.ContainsKey(cat.Key) ? skillColors[cat.Key] : "cyan";
+            <div class="skill-card-new glass-card-enhanced animate-fade-up delay-1">
+                <div class="skill-card-header">
+                    <div class="skill-icon-new @colorClass">
+                        <i class="bi @iconClass"></i>
+                    </div>
+                    <h5 class="skill-title-new">@cat.Key</h5>
+                    <span class="skill-count">@cat.Value.Length items</span>
+                </div>
+                <div class="skill-tags-new">
+                    @foreach (var skill in cat.Value)
+                    {
+                        <span class="skill-tag-new @colorClass">@skill</span>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+</section>
