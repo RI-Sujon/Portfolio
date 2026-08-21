@@ -819,7 +819,6 @@ E:\Doom\RabiulPortfolio\obj\Debug\net9.0\scopedcss\projectbundle\RabiulPortfolio
 E:\Doom\RabiulPortfolio\obj\Debug\net9.0\blazor.build.boot-extension.json
 E:\Doom\RabiulPortfolio\obj\Debug\net9.0\blazor.boot.json
 E:\Doom\RabiulPortfolio\obj\Debug\net9.0\compressed\m7sadktc1b-{0}-b6f77dq98c-b6f77dq98c.gz
-E:\Doom\RabiulPortfolio\obj\Debug\net9.0\compressed\9ywy578ow5-{0}-0p90ynauml-0p90ynauml.gz
 E:\Doom\RabiulPortfolio\obj\Debug\net9.0\compressed\wpry8fdnmv-{0}-efraaaxdy9-efraaaxdy9.gz
 E:\Doom\RabiulPortfolio\obj\Debug\net9.0\compressed\5mz4a9pbf4-{0}-bqjiyaj88i-bqjiyaj88i.gz
 E:\Doom\RabiulPortfolio\obj\Debug\net9.0\compressed\vtvmpsl50d-{0}-c2jlpeoesf-c2jlpeoesf.gz
@@ -1079,10 +1078,11 @@ E:\Doom\RabiulPortfolio\obj\Debug\net9.0\RabiulPortfolio.dll
 E:\Doom\RabiulPortfolio\obj\Debug\net9.0\refint\RabiulPortfolio.dll
 E:\Doom\RabiulPortfolio\obj\Debug\net9.0\RabiulPortfolio.pdb
 E:\Doom\RabiulPortfolio\obj\Debug\net9.0\ref\RabiulPortfolio.dll
-E:\Doom\RabiulPortfolio\bin\Debug\net9.0\wwwroot\_framework\RabiulPortfolio.afttkwnq87.wasm
-E:\Doom\RabiulPortfolio\bin\Debug\net9.0\wwwroot\_framework\RabiulPortfolio.ts49f6dtui.pdb
-E:\Doom\RabiulPortfolio\bin\Debug\net9.0\wwwroot\_framework\RabiulPortfolio.afttkwnq87.wasm.gz
-E:\Doom\RabiulPortfolio\bin\Debug\net9.0\wwwroot\_framework\RabiulPortfolio.ts49f6dtui.pdb.gz
-E:\Doom\RabiulPortfolio\obj\Debug\net9.0\compressed\sefivf87p1-{0}-afttkwnq87-afttkwnq87.gz
-E:\Doom\RabiulPortfolio\obj\Debug\net9.0\compressed\ijsi9cdwoa-{0}-ts49f6dtui-ts49f6dtui.gz
-E:\Doom\RabiulPortfolio\obj\Debug\net9.0\compressed\aoharnrig0-{0}-0qhp0iyj1l-0qhp0iyj1l.gz
+E:\Doom\RabiulPortfolio\bin\Debug\net9.0\wwwroot\_framework\RabiulPortfolio.93dbv2zuaw.wasm
+E:\Doom\RabiulPortfolio\bin\Debug\net9.0\wwwroot\_framework\RabiulPortfolio.d50tz27mfb.pdb
+E:\Doom\RabiulPortfolio\bin\Debug\net9.0\wwwroot\_framework\RabiulPortfolio.93dbv2zuaw.wasm.gz
+E:\Doom\RabiulPortfolio\bin\Debug\net9.0\wwwroot\_framework\RabiulPortfolio.d50tz27mfb.pdb.gz
+E:\Doom\RabiulPortfolio\obj\Debug\net9.0\compressed\9ywy578ow5-{0}-v66ux74qa6-v66ux74qa6.gz
+E:\Doom\RabiulPortfolio\obj\Debug\net9.0\compressed\sefivf87p1-{0}-93dbv2zuaw-93dbv2zuaw.gz
+E:\Doom\RabiulPortfolio\obj\Debug\net9.0\compressed\ijsi9cdwoa-{0}-d50tz27mfb-d50tz27mfb.gz
+E:\Doom\RabiulPortfolio\obj\Debug\net9.0\compressed\aoharnrig0-{0}-bpbjosc2kt-bpbjosc2kt.gz
