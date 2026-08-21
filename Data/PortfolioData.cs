@@ -22,7 +22,7 @@ public static class PortfolioData
         {
             new Role("Software Engineer", "August 2025 - Present", "Current", new[] { "ASP.NET Core", "Blazor", "PostgreSQL" })
         }),
-        new("LoneSock", "Dhaka-1000, Bangladesh", "April 2025 - July 2025 • 4 months", "LoneSock_LOGO.png", new[]
+        new("LoneSock", "Dhaka-1000, Bangladesh", "April 2025 - July 2025 • 4 months", "LoneSock_LOGO.svg", new[]
         {
             new Role("Software Engineer", "April 2025 - July 2025", "4 months", new[] { "ASP.NET Core", "NextJS", "PostgreSQL" })
         }),
