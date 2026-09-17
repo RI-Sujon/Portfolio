@@ -39,13 +39,27 @@ public static class PortfolioData
 
     public static readonly List<Project> ProProjects = new()
     {
-        new("Reamsシステム", "Blazor", "A Japan based client project for migrating a legacy system to a modern web application using Blazor Framework."),
-        new("医薬品在庫管理システム", "Blazor, PostgreSQL", "A Japan based client project for migrating a VB6 PC apps to Web Application using Blazor Framework."),
-        new("Power Division ERP", "ASP.NET Core, MSSQL, Fast Report", "Enterprise ERP system for Bangladesh Power Division operations, inventory management, reporting, and performance tracking."),
-        new("Boooks.Net", "ASP.NET Core, NextJS, PostgreSQL", "An international marketplace for buying and selling rare, vintage, valuable, and collectible items."),
-        new("ERP Dashboard", "ASP.NET Core, Chart.js", "Management dashboard for visualizing Power Division ERP data, operations, and performance insights."),
-        new("Identity Protection", "React", "A US-based client project focused on management workflows, reusable React components, and interactive user experiences."),
-        new("LikeHome.Care", "Flutter (Dart), Firebase", "Mobile platform connecting caregivers with families for in-home care services and streamlined registration.")
+        new("Reamsシステム", "Blazor", "A Japan based client project for migrating a legacy system to a modern web application using Blazor Framework.",
+            new[] { "Developed responsive Blazor UI components for migrating legacy Java application screens.", "Recreated legacy Java screens as modern, responsive web interfaces using Blazor." },
+            "BJIT Ltd", "BJIT_LOGO.png"),
+        new("医薬品在庫管理システム", "Blazor, PostgreSQL", "A Japan based client project for migrating a VB6 PC apps to Web Application using Blazor Framework.",
+            new[] { "Developed application features using Blazor for migrating the legacy VB6 application.", "Implemented UI, business logic, and PostgreSQL database operations using Blazor." },
+            "BJIT Ltd", "BJIT_LOGO.png"),
+        new("Power Division ERP", "ASP.NET Core, MSSQL, Fast Report", "Enterprise ERP system for Bangladesh Power Division operations, inventory management, reporting, and performance tracking.",
+            new[] { "Developed Inventory Management, Performance Appraisal, and Plant Management modules, translating operational requirements into scalable ERP solutions.", "Built and integrated full-stack features across frontend, backend APIs, and database layers, ensuring reliable data flow and seamless module integration.", "Designed and implemented dynamic reports using FastReport for data analysis, visualization, and performance monitoring." },
+            "Orion Informatics Ltd", "Orion_LOGO.png"),
+        new("Boooks.Net", "ASP.NET Core, NextJS, PostgreSQL", "An international marketplace for buying and selling rare, vintage, valuable, and collectible items.",
+            new[] { "Designed the application architecture and established the project structure from scratch, including introducing Redis as a caching layer.", "Set up Docker containerization and began building an Azure DevOps CI/CD pipeline for the application.", "Implemented the user authentication module, including login functionality." },
+            "LoneSock", "LoneSock_LOGO.svg"),
+        new("ERP Dashboard", "ASP.NET Core, Chart.js", "Management dashboard for visualizing Power Division ERP data, operations, and performance insights.",
+            new[] { "Contributed to ERP dashboard UI development with interactive Chart.js visualizations." },
+            "Orion Informatics Ltd", "Orion_LOGO.png"),
+        new("Identity Protection", "React", "A US-based client project focused on management workflows, reusable React components, and interactive user experiences.",
+            new[] { "Resolved UI bugs and frontend issues, while refactoring React components to improve code readability, structure, and maintainability.", "Reduced code redundancy and streamlined page implementations, improving overall code quality and making the application easier to maintain and extend." },
+            "Orion Informatics Ltd", "Orion_LOGO.png"),
+        new("LikeHome.Care", "Flutter (Dart), Firebase", "Mobile platform connecting caregivers with families for in-home care services and streamlined registration.",
+            new[] { "Built the caregiver registration and profile flow for onboarding service providers.", "Implemented the parent-facing search experience for finding nearby caregivers." },
+            "Independent Client Project", "")
     };
 
     public static readonly List<AcademicProject> Academics = new()

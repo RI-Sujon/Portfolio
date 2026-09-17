@@ -2319,11 +2319,14 @@ body::before {
     display: grid;
     grid-template-columns: 1.6fr 1fr;
     gap: 2rem;
-    align-items: start;
+    align-items: stretch;
 }
 
 .about-text-card {
+    display: flex;
+    flex-direction: column;
     padding: 2.5rem;
+    height: 100%;
 }
 
 .about-text-inner p {
@@ -2364,7 +2367,7 @@ body::before {
     background: rgba(100, 255, 218, 0.03);
     border-left: 3px solid #64ffda;
     border-radius: 0 12px 12px 0;
-    margin-top: 1.5rem;
+    margin-top: auto;
 }
 
 .about-quote-new i {
@@ -3377,13 +3380,16 @@ body::before {
 /* Professional Projects Grid */
 .pro-projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.75rem;
+    align-items: start;
 }
 
 .pro-project-card {
     position: relative;
-    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    padding: 1.75rem;
     border-radius: 16px;
     background: rgba(17, 25, 40, 0.75);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -3392,7 +3398,7 @@ body::before {
     overflow: hidden;
 }
 
-/* .pro-project-card::before {
+.pro-project-card::before {
     content: '';
     position: absolute;
     top: 0;
@@ -3401,6 +3407,7 @@ body::before {
     height: 3px;
     background: linear-gradient(90deg, #64ffda, #7c3aed);
     transform: scaleX(0);
+    transform-origin: left;
     transition: transform 0.4s ease;
 }
 
@@ -3412,47 +3419,151 @@ body::before {
     transform: translateY(-8px);
     border-color: rgba(100, 255, 218, 0.3);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-} */
+}
 
-.pro-card-icon {
-    width: 45px;
-    height: 45px;
+.pro-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 1.1rem;
+}
+
+.pro-company-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    min-width: 0;
+}
+
+.pro-company-logo {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    object-fit: contain;
+    padding: 4px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+}
+
+.pro-company-logo-fallback {
     display: flex;
     align-items: center;
     justify-content: center;
     background: rgba(124, 58, 237, 0.15);
-    border-radius: 10px;
-    margin-bottom: 1.25rem;
-}
-
-.pro-card-icon i {
-    font-size: 1.3rem;
     color: #a78bfa;
+    font-size: 0.95rem;
 }
 
-.lock-icon-wide {
-    display: inline-block;
-    transform: scaleX(1.25);
+.pro-company-name {
+    color: #ccd6f6;
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 0.2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.pro-project-card h5 {
+.confidential-badge {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 165, 0, 0.1);
+    border: 1px solid rgba(255, 165, 0, 0.25);
+    border-radius: 8px;
+    color: #ffa500;
+    font-size: 0.8rem;
+    cursor: default;
+}
+
+.pro-project-title {
     color: #e6f1ff;
     font-weight: 600;
-    font-size: 1.1rem;
-    margin-bottom: 0.75rem;
+    font-size: 1.15rem;
+    line-height: 1.4;
+    margin-bottom: 0.9rem;
 }
 
-.pro-project-card p {
+.pro-project-desc {
     color: #8892b0;
     font-size: 0.9rem;
     line-height: 1.6;
-    margin-bottom: 1rem;
+    margin-bottom: 1.1rem;
+}
+
+.pro-contributions {
+    margin-top: 0.25rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.pro-contributions-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #64ffda;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+}
+
+.pro-contributions-label::-webkit-details-marker {
+    display: none;
+}
+
+.pro-contributions-chevron {
+    color: #8892b0;
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+.pro-contributions[open] .pro-contributions-chevron {
+    transform: rotate(180deg);
+}
+
+.pro-contributions .pro-project-responsibilities {
+    margin-top: 0.9rem;
+}
+
+.pro-project-responsibilities {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.pro-project-responsibilities li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    color: #a8b2d1;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.pro-project-responsibilities li::before {
+    content: '▹';
+    color: #64ffda;
+    font-size: 0.7rem;
+    flex-shrink: 0;
+    margin-top: 0.2rem;
 }
 
 .pro-tech-stack {
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
+    margin-bottom: 1.1rem;
 }
 
 .tech-badge-sm {

@@ -1,3 +1,3 @@
 namespace RabiulPortfolio.Models;
 
-public record Project(string Title, string Tech, string Desc);
+public record Project(string Title, string Tech, string Desc, string[] Responsibilities, string Company, string CompanyLogo);
