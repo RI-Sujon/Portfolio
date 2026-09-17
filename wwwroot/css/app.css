@@ -2613,6 +2613,21 @@ body::before {
     color: #ffa500;
 }
 
+.skill-icon-new.green {
+    background: linear-gradient(135deg, rgba(74, 222, 128, 0.2), rgba(74, 222, 128, 0.05));
+    color: #4ade80;
+}
+
+.skill-icon-new.blue {
+    background: linear-gradient(135deg, rgba(96, 165, 250, 0.2), rgba(96, 165, 250, 0.05));
+    color: #60a5fa;
+}
+
+.skill-icon-new.yellow {
+    background: linear-gradient(135deg, rgba(251, 191, 36, 0.2), rgba(251, 191, 36, 0.05));
+    color: #fbbf24;
+}
+
 .skill-title-new {
     color: #ccd6f6;
     font-weight: 600;
@@ -2665,6 +2680,24 @@ body::before {
     background: rgba(255, 165, 0, 0.08);
     border: 1px solid rgba(255, 165, 0, 0.2);
     color: #ffa500;
+}
+
+.skill-tag-new.green {
+    background: rgba(74, 222, 128, 0.08);
+    border: 1px solid rgba(74, 222, 128, 0.2);
+    color: #4ade80;
+}
+
+.skill-tag-new.blue {
+    background: rgba(96, 165, 250, 0.08);
+    border: 1px solid rgba(96, 165, 250, 0.2);
+    color: #60a5fa;
+}
+
+.skill-tag-new.yellow {
+    background: rgba(251, 191, 36, 0.08);
+    border: 1px solid rgba(251, 191, 36, 0.2);
+    color: #fbbf24;
 }
 
 .skill-tag-new:hover {
@@ -3452,6 +3485,10 @@ body::before {
     flex-direction: column;
 }
 
+.academic-card-wide {
+    grid-column: span 2;
+}
+
 .academic-card:hover {
     transform: translateY(-8px) scale(1.02);
     border-color: rgba(100, 255, 218, 0.3);
@@ -3571,5 +3608,9 @@ body::before {
     
     .academic-features {
         grid-template-columns: 1fr;
+    }
+
+    .academic-card-wide {
+        grid-column: span 1;
     }
 }

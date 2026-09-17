@@ -10,10 +10,13 @@ public static class PortfolioData
 {
     public static readonly Dictionary<string, string[]> Skills = new()
     {
-        ["Languages"] = new[] { "C", "C++", "C#", "Java", "Dart", "JavaScript", "TypeScript", "PHP" },
-        ["Frameworks"] = new[] { "ASP.NET Core", "Blazor", "NextJS", "React", "Angular", "Flutter", "Android", "NodeJS" },
-        ["Databases"] = new[] { "MSSQL", "MySQL", "Firebase", "MongoDB", "PostgreSQL" },
-        ["Tools"] = new[] { "Git", "Docker", "Azure", "Jira", "Selenium", "Fast Report", "Agora", "Chart.js" }
+        ["Languages"] = new[] { "C#", "JavaScript", "TypeScript", "Dart", "Java", "C++", "PHP" },
+        ["Frontend & Mobile"] = new[] { "Blazor", "NextJS", "React", "Angular", "Flutter", "Android" },
+        ["Backend"] = new[] { "ASP.NET Core (MVC, Web API)", "NodeJS" },
+        ["Databases"] = new[] { "PostgreSQL", "MSSQL", "MySQL", "MongoDB", "Firebase", "Redis" },
+        ["Cloud & DevOps"] = new[] { "Azure", "Terraform", "Azure DevOps", "Docker", "Kubernetes", "RBAC/Managed Identity" },
+        ["AI / LLM Integration"] = new[] { "Azure OpenAI", "RAG", "Vector Search", "Prompt Engineering", "Function/Tool Calling" },
+        ["Tools & Testing"] = new[] { "Git", "Jira", "FastReport", "Selenium" }
     };
 
     public static readonly List<Company> Companies = new()
@@ -24,7 +27,7 @@ public static class PortfolioData
         }),
         new("LoneSock", "Dhaka-1000, Bangladesh", "April 2025 - July 2025 • 4 months", "LoneSock_LOGO.svg", new[]
         {
-            new Role("Software Engineer", "April 2025 - July 2025", "4 months", new[] { "ASP.NET Core", "NextJS", "PostgreSQL" })
+            new Role("Software Engineer", "April 2025 - July 2025", "4 months", new[] { "ASP.NET Core", "NextJS", "PostgreSQL", "Docker", "Redis", "Azure DevOps" })
         }),
         new("Orion Informatics Ltd", "Dhaka-1205, Bangladesh", "January 2022 - March 2025 • 3 years 3 months", "Orion_LOGO.png", new[]
         {
@@ -47,6 +50,10 @@ public static class PortfolioData
 
     public static readonly List<AcademicProject> Academics = new()
     {
+        new("AI-Powered E-Commerce Platform", "ASP.NET Core, PostgreSQL/pgvector, Terraform, Azure DevOps, Docker, Kubernetes, Azure OpenAI",
+            "Full-stack e-commerce app with multi-environment cloud infrastructure fully defined as code, deployed both locally and to Azure Kubernetes Service (AKS).",
+            "", "", "",
+            new[] { "Terraform-provisioned Azure resources via Azure DevOps CI/CD", "Containerized with Kubernetes, Kustomize overlays for dev/staging/prod", "Semantic product search using RAG and vector embeddings", "AI content-generation admin tool and shopping-assistant chatbot with LLM function calling", "Managed Identity authentication throughout, no API keys" }),
         new("Cricket Live Streaming with Live Score", "Flutter, React, ASP.NET Core, Firebase",
             "A complete live cricket streaming solution with real-time score updates and match history.",
             "https://github.com/RI-Sujon/CricketLiveStreamingWithLiveScore/tree/dev", "", "",

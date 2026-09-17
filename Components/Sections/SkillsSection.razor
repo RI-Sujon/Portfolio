@@ -7,15 +7,21 @@
     <div class="skills-grid-new">
         @{ var skillIcons = new Dictionary<string, string> {
             {"Languages", "bi-code-slash"},
-            {"Frameworks", "bi-layers"},
+            {"Frontend & Mobile", "bi-layers"},
+            {"Backend", "bi-hdd-network"},
             {"Databases", "bi-database"},
-            {"Tools", "bi-tools"}
+            {"Cloud & DevOps", "bi-cloud-arrow-up"},
+            {"AI / LLM Integration", "bi-cpu"},
+            {"Tools & Testing", "bi-tools"}
         }; }
         @{ var skillColors = new Dictionary<string, string> {
             {"Languages", "cyan"},
-            {"Frameworks", "purple"},
+            {"Frontend & Mobile", "purple"},
+            {"Backend", "blue"},
             {"Databases", "pink"},
-            {"Tools", "orange"}
+            {"Cloud & DevOps", "green"},
+            {"AI / LLM Integration", "yellow"},
+            {"Tools & Testing", "orange"}
         }; }
         @foreach (var cat in PortfolioData.Skills)
         {

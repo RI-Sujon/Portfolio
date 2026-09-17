@@ -6,7 +6,7 @@
         <div class="academic-projects-grid">
             @foreach (var p in PortfolioData.Academics)
             {
-                <div class="academic-card glass-card">
+                <div class="academic-card glass-card @(p.Title == "AI-Powered E-Commerce Platform" ? "academic-card-wide" : "")">
                     <div class="academic-card-header">
                         <div class="academic-links">
                             @if (!string.IsNullOrEmpty(p.GithubFrontend) && !string.IsNullOrEmpty(p.GithubBackend))
