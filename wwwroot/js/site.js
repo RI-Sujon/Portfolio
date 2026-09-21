@@ -40,7 +40,7 @@ window.initTypingEffect = () => {
     const element = document.querySelector('.typing-wrapper');
     if (!element) return;
     
-    const texts = ['Full-Stack Developer', 'Software Engineer', 'Problem Solver', 'Tech Enthusiast'];
+    const texts = ['Full-Stack Developer', '.NET & Blazor Specialist', 'Cloud & AI Integrator', 'ERP Solutions Builder'];
     let textIndex = 0;
     let charIndex = 0;
     let isDeleting = false;

@@ -11,20 +11,20 @@
                         <div class="academic-links">
                             @if (!string.IsNullOrEmpty(p.GithubFrontend) && !string.IsNullOrEmpty(p.GithubBackend))
                             {
-                                <a href="@p.GithubFrontend" target="_blank" title="Frontend Repository"><i class="bi bi-github"></i><span class="link-label">FE</span></a>
-                                <a href="@p.GithubBackend" target="_blank" title="Backend Repository"><i class="bi bi-github"></i><span class="link-label">BE</span></a>
+                                <a href="@p.GithubFrontend" target="_blank" rel="noopener noreferrer" title="Frontend Repository" aria-label="Frontend repository for @p.Title"><i class="bi bi-github"></i><span class="link-label">FE</span></a>
+                                <a href="@p.GithubBackend" target="_blank" rel="noopener noreferrer" title="Backend Repository" aria-label="Backend repository for @p.Title"><i class="bi bi-github"></i><span class="link-label">BE</span></a>
                             }
                             else if (!string.IsNullOrEmpty(p.GithubFrontend))
                             {
-                                <a href="@p.GithubFrontend" target="_blank" title="View on GitHub"><i class="bi bi-github"></i></a>
+                                <a href="@p.GithubFrontend" target="_blank" rel="noopener noreferrer" title="View on GitHub" aria-label="View @p.Title on GitHub"><i class="bi bi-github"></i></a>
                             }
                             else if (!string.IsNullOrEmpty(p.GithubBackend))
                             {
-                                <a href="@p.GithubBackend" target="_blank" title="View on GitHub"><i class="bi bi-github"></i></a>
+                                <a href="@p.GithubBackend" target="_blank" rel="noopener noreferrer" title="View on GitHub" aria-label="View @p.Title on GitHub"><i class="bi bi-github"></i></a>
                             }
                             @if (!string.IsNullOrEmpty(p.Live))
                             {
-                                <a href="@p.Live" target="_blank" title="Live Demo"><i class="bi bi-box-arrow-up-right"></i></a>
+                                <a href="@p.Live" target="_blank" rel="noopener noreferrer" title="Live Demo" aria-label="Live demo of @p.Title"><i class="bi bi-box-arrow-up-right"></i></a>
                             }
                         </div>
                     </div>
